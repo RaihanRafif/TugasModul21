@@ -65,7 +65,7 @@ task api() {
             args = [
 //                    '--plugin', 'html:reports/api.html',
                     '--plugin', 'pretty',
-                    '--glue', 'raihan',
+                    '--glue', 'api',
                     '--tags', "@Api-testing",
                     'src/test/resources/api'
             ]
