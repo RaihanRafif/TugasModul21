@@ -1,5 +1,5 @@
+@Api-testing
 Feature: User API interactions
-
   Scenario: Retrieve a list of users
     Given the user API endpoint is available
     When I send a GET request to "/api/users?page=2"

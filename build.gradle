@@ -45,12 +45,31 @@ task cucumber() {
             main = "io.cucumber.core.cli.Main"
             classpath = configurations.cucumberRuntime + sourceSets.main.output + sourceSets.test.output
             args = [
-                    '--plugin', 'html:reports/index.html',
+//                    '--plugin', 'html:reports/index.html',
                     '--plugin', 'pretty',
                     '--glue', 'raihan',
                     '--tags', "${tags}",
-                    'src/test/resources'
+                    'src/test/resources/selenium'
             ]
         }
     }
 }
+
+task api() {
+    description("Running Api Test")
+    dependsOn assemble, compileTestJava
+    doLast {
+        javaexec {
+            main = "io.cucumber.core.cli.Main"
+            classpath = configurations.cucumberRuntime + sourceSets.main.output + sourceSets.test.output
+            args = [
+//                    '--plugin', 'html:reports/api.html',
+                    '--plugin', 'pretty',
+                    '--glue', 'raihan',
+                    '--tags', "@Api-testing",
+                    'src/test/resources/api'
+            ]
+        }
+    }
+}
+
