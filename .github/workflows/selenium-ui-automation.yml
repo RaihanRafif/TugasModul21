@@ -1,4 +1,4 @@
-name: Web automation workflow
+name: Selenium testing automation workflow
 
 on:
   push:
