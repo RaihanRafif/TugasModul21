@@ -1,4 +1,4 @@
-name: Selenium testing automation workflow
+name: Api testing automation workflow
 
 on:
   push:
@@ -31,16 +31,16 @@ jobs:
     - name: Setup Gradlew
       run: chmod +x gradlew
 
-    # Execute graddle command for running cucumber test
+    # Execute graddle command for running api test
     - name: Execute Test
-      run: ./gradlew cucumber
+      run: ./gradlew api
 
     # Archive Test Result
     - name: Archive Test Result
       uses: actions/upload-artifact@v4.0.0
       if: always()
       with:
-        name: Cucumber Report
+        name: Api Report
         path: reports
      
     # Deploy to Github Pages
